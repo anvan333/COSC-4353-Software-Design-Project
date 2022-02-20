@@ -1,43 +1,42 @@
 * {
     margin: 0;
     padding: 0;
-  }
-  
-  h1 {
+}
+
+h1 {
     color: #999999;
     font-family: Georgia, sans-serif;
     font-size: 50px;
-  }
-  
-  #container {
+}
+
+#container {
     min-height: 85%;
-  }
-  
-  #main {
+}
+
+#main {
     overflow: auto;
     padding-bottom: 100px;
-  }
-  
-  footer {
+}
+
+footer {
     background-color: #E8E6D9;
     color: white;
     height: 150px;
     position: relative;
     margin-top: -100px;
     clear: both;
-  }
-  
-  html,
-  body {
+}
+
+html, body {
     height: 100%;
     background-image: url("history_photo.jpg");
     background-repeat: no-repeat;
-    background-size: 1707px 440px;
-  }
-   /* Choose background for top navigation bar */
-   .topnav {
-    overflow: hidden;
+    background-size: 2000px 1900px; 
+}
+
+.topnav {
     background-color: rgb(52, 56, 59);
+    overflow: hidden;
   }
   
   /* Style the links inside the navigation bar */
@@ -61,7 +60,6 @@
     background-color: #c4bdac;
     color: white;
   }
-  
   .button {
     position: absolute;
     top: 20%;
