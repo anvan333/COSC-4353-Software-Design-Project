@@ -21,7 +21,7 @@ h1 {
 footer {
     background-color: #74839b;
     color: #a9b6c3;
-    height: 150px;
+    height: 350px;
     position: relative;
     margin-top: -150px;
     clear: both;
@@ -29,7 +29,7 @@ footer {
 
 html, body {
     height: 100%;
-    background-image: url("history_photo.jpg");
+    background-image: url("history_bkgrd.jpg");
     background-repeat: no-repeat;
     background-size: 2000px 1905px; 
 }
