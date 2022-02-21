@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,7 +11,21 @@
         <title>Fuel Quote History</title>
         <link rel="stylesheet" href="fuel_history.css">
     </head>
-
+    <head>
+        <style>
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        th, td {
+          padding: 15px;
+          text-align: left;
+          border-bottom: 15x solid #2F3A56;
+        }
+        
+        tr:hover {background-color: #b9d4db;}
+        </style>
     <body>
         <div class="topnav">
             <a href="home32.html">Home</a>
@@ -28,10 +43,10 @@
 
     <div id="container">
     <center>
-        <h1 class="statBox--featuredText p">Historical Fuel Quote Data</h1>
+        <h1 class="statBox--featuredText p">Historical Fuel Quote Data</h3>
     </center>
     <div id="main">
-    <table class="table mt-5 text-center" id="history">
+    <table class="table mt-5 text-center" id="fuel_history">
         <thead>
           <tr>
             <th>Gallons Requested</th>
@@ -41,7 +56,7 @@
             <th>Total Amount Due</th>
           </tr>
         </thead>
-        <!-- Dummy Values just for front end -->
+        <!-- example values -->
         <tr>
             <td>111</td>
             <td>3490 Little York Ln, Maiami, FL 98301</td>

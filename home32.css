@@ -1,10 +1,10 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 10;
   }
   
   h1 {
-    color: #999999;
+    color: rgb(94, 84, 66);
     font-family: Georgia, sans-serif;
     font-size: 50px;
   }
@@ -19,16 +19,15 @@
   }
   
   footer {
-    background-color: #E8E6D9;
-    color: white;
-    height: 150px;
+    background-color: #74839b;
+    color: #a9b6c3;
+    height: 350px;
     position: relative;
-    margin-top: -100px;
+    margin-top: -150px;
     clear: both;
   }
   
-  html,
-  body {
+  html, body {
     height: 100%;
     background-image: url("history_photo.jpg");
     background-repeat: no-repeat;
@@ -37,13 +36,13 @@
    /* Choose background for top navigation bar */
    .topnav {
     overflow: hidden;
-    background-color: rgb(52, 56, 59);
+    background-color: #E8E6D9;
   }
   
   /* Style the links inside the navigation bar */
   .topnav a {
     float: left;
-    color: #f2f2f2;
+    color: #b5babe;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -52,13 +51,13 @@
   
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #e6d1d8;
-    color: black;
+    background-color: #9dc6ec67;
+    color: #2F3A56;
   }
   
   /* Add a color to the active/current link */
   .topnav a.active {
-    background-color: #c4bdac;
+    background-color: #758093;
     color: white;
   }
   
@@ -66,15 +65,18 @@
     position: absolute;
     top: 20%;
     left: 50%;
+    padding: 10px 30px;
+    text-align: center;
     transform: translate(-50%, -50%);
     margin-top: 150px;
   }
   
   .btn {
     border: 1px solid rgb(219, 201, 201);
-    background-color: aliceblue;
-    padding: 10px 30px;
-    color: rgb(167, 87, 56);
+    background-color: #74839b;
+    padding: 15px 37px;
+
+    color: #c4bdac;
     <!text-decoration: none;>
   }
   
