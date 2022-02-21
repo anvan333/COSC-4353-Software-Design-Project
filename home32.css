@@ -22,13 +22,9 @@
     background-color: #74839b;
     color: #a9b6c3;
     height: 150px;
-<<<<<<< HEAD
     position: fixed;
     width: 100%;
     z-index: 8;
-=======
-    position: relative;
->>>>>>> 143f19fbd3b0ca2d00636c4c7b1442c788778327
     margin-top: -150px;
     clear: both;
   }
@@ -38,14 +34,10 @@
     background-image: url("NTCback.jpg");
     background-position: center;
     background-repeat: no-repeat;
-<<<<<<< HEAD
     background-size: cover;
     position: relative;
     z-index: 10;
-=======
-    background-size: 1290px 499px;
->>>>>>> 143f19fbd3b0ca2d00636c4c7b1442c788778327
-  }
+  
    /* Choose background for top navigation bar */
    .topnav {
     overflow: hidden;
