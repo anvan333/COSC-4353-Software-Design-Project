@@ -70,12 +70,3 @@ html, body {
     margin-top: 150px;
   }
   
-  .btn {
-    border: 1px solid rgb(219, 201, 201);
-    background-color: #74839b;
-    padding: 10px 30px;
-    text-align: center;
-    color: #c4bdac;
-    <!text-decoration: none;>
-  }
-  
