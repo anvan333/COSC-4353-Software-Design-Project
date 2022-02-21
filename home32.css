@@ -10,7 +10,11 @@
   }
   
   #container {
+<<<<<<< HEAD
+    min-height: 91%;
+=======
     min-height: 100%;
+>>>>>>> be653098b144b3ec03e263846c53b2658a57c522
   }
   
   #main {
