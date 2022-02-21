@@ -37,6 +37,7 @@
     background-size: cover;
     position: relative;
     z-index: 10;
+  }
   
    /* Choose background for top navigation bar */
    .topnav {
