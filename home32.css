@@ -10,7 +10,7 @@
   }
   
   #container {
-    min-height: 85%;
+    min-height: 100%;
   }
   
   #main {
@@ -21,8 +21,10 @@
   footer {
     background-color: #74839b;
     color: #a9b6c3;
-    height: 350px;
-    position: relative;
+    height: 150px;
+    position: fixed;
+    width: 100%;
+    z-index: 8;
     margin-top: -150px;
     clear: both;
   }
@@ -30,8 +32,11 @@
   html, body {
     height: 100%;
     background-image: url("NTCback.jpg");
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    position: relative;
+    z-index: 10;
   }
    /* Choose background for top navigation bar */
    .topnav {
@@ -77,6 +82,5 @@
     padding: 10px 30px;
     text-align: center;
     color: #c4bdac;
-    <!text-decoration: none;>
   }
   
