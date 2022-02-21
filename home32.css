@@ -10,11 +10,7 @@
   }
   
   #container {
-<<<<<<< HEAD
-    min-height: 91%;
-=======
     min-height: 100%;
->>>>>>> be653098b144b3ec03e263846c53b2658a57c522
   }
   
   #main {
@@ -29,7 +25,7 @@
     position: fixed;
     width: 100%;
     z-index: 8;
-    margin-top: -150px;
+    margin-top:px;
     clear: both;
   }
   
@@ -38,9 +34,9 @@
     background-image: url("NTCback.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 1290px 499px;
     position: relative;
-    z-index: 10;
+    z-index: 15;
   }
   
    /* Choose background for top navigation bar */

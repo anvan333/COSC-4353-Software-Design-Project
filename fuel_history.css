@@ -22,7 +22,7 @@ footer {
     background-color: #74839b;
     color: #a9b6c3;
     height: 150px;
-    position: relative;
+    position: fixed;
     margin-top: -100px;
     clear: both;
 }
@@ -32,6 +32,8 @@ html, body {
     background-image: url("NTCback.jpg");
     background-repeat: no-repeat;
     background-size: 1290px 499px; 
+    position: relative;
+    z-index: 10;
 }
 
 .topnav {
