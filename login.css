@@ -10,7 +10,7 @@ h1 {
 }
 
 #container {
-  min-height: 85%;
+  min-height: 100%;
 }
 
 #main {
@@ -22,17 +22,21 @@ footer {
   background-color: #74839b;
   color: #a9b6c3;
   height: 150px;
-  position: relative;
-  margin-top: -100px;
+  position: fixed;
+  width: 100%;
+  z-index: 8;
+  margin-top: -150px;
   clear: both;
 }
 
-html,
-body {
+html, body {
   height: 100%;
   background-image: url("NTCback.jpg");
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: 1290px 400px;
+  background-size: cover;
+  position: relative;
+  z-index: 10;
 }
  /* Choose background for top navigation bar */
  .topnav {
@@ -64,6 +68,7 @@ body {
 
 .button {
   position: absolute;
+  text-align: center;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -77,4 +82,25 @@ body {
   background-color: aliceblue;
   padding: 10px 30px;
   color: rgb(167, 87, 56);
+  
+}
+
+.regbtn {
+  border: 1px solid rgb(219, 201, 201);
+  background-color: aliceblue;
+  padding: 5px 15px;
+  color: rgb(167, 87, 56);
+ 
+}
+
+.userinfo {
+  position: absolute;
+  box-sizing: border-box;
+  border: 3px;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
 }

@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 10;
   }
   
   h1 {
@@ -10,11 +10,7 @@
   }
   
   #container {
-<<<<<<< HEAD
-    min-height: 91%;
-=======
-    min-height: 100%;
->>>>>>> be653098b144b3ec03e263846c53b2658a57c522
+    min-height: 35%;
   }
   
   #main {
@@ -23,30 +19,24 @@
   }
   
   footer {
-    background-color: #74839b;
+    background-color: hsl(216, 16%, 53%);
     color: #a9b6c3;
     height: 150px;
-    position: fixed;
-    width: 100%;
-    z-index: 8;
-    margin-top: -150px;
+    position: relative;
+    margin-top: 0x;
     clear: both;
   }
   
   html, body {
     height: 100%;
-    background-image: url("NTCback.jpg");
-    background-position: center;
+    background-image: url("bckground.jpeg");
     background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    z-index: 10;
+    background-size: contain;
   }
   
-   /* Choose background for top navigation bar */
-   .topnav {
-    overflow: hidden;
+  .topnav {
     background-color: #E8E6D9;
+    overflow: hidden;
   }
   
   /* Style the links inside the navigation bar */
@@ -61,7 +51,7 @@
   
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #9dc6ec67;
+    background-color: hsl(216, 16%, 53%);
     color: #2F3A56;
   }
   
@@ -70,22 +60,12 @@
     background-color: #758093;
     color: white;
   }
-  
-  .button {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    padding: 10px 30px;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    margin-top: 150px;
-  }
-  
   .btn {
     border: 1px solid rgb(219, 201, 201);
-    background-color: #74839b;
-    padding: 10px 30px;
-    text-align: center;
-    color: #c4bdac;
-  }
+      background-color: #74839b;
+      padding: 10px 30px;
+      text-align: center;
+      color: #c4bdac;
+    }
   
+    
