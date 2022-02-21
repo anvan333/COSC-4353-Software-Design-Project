@@ -1,42 +1,76 @@
 * {
+
+    font-family:  Georgia, sans-serif;
     margin: 0;
     padding: 0;
-}
+  }
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: rgb(52, 56, 59);
+  }
+  
 
-h1 {
+  
+  .row.content {
+    height: 450px;
+  }
+  
+.sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: 100%;
+  }
+  h1 {
     color: rgb(94, 84, 66);
     font-family: Georgia, sans-serif;
     font-size: 50px;
-}
-
-#container {
-    min-height: 80%;
-}
-
-#main {
+  }
+  
+  #main {
     overflow: auto;
     padding-bottom: 100px;
-}
+  }
 
-footer {
+  footer {
     background-color: #74839b;
     color: #a9b6c3;
     height: 150px;
     position: relative;
-    margin-top: -100px;
+    margin-top: -150px;
     clear: both;
-}
+  }
+  
+  
 
-html, body {
+  #container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  #left {
+    float: left;
+  }
+  #right {
+    float: right;
+  }
+  
+  #info {
+    margin: auto;
+    margin-top: 30px;
+    width: 70%;
+  }
+  
+  html, body {
     height: 100%;
     background-image: url("NTCback.jpg");
     background-repeat: no-repeat;
-    background-size: 1290px 499px; 
-}
-
-.topnav {
-    background-color: #E8E6D9;
+    background-size: 1290px 499px;
+  }
+   /* Choose background for top navigation bar */
+   .topnav {
     overflow: hidden;
+    background-color: #E8E6D9;
   }
   
   /* Style the links inside the navigation bar */
@@ -60,6 +94,7 @@ html, body {
     background-color: #758093;
     color: white;
   }
+  
   .button {
     position: absolute;
     top: 20%;
@@ -69,4 +104,3 @@ html, body {
     transform: translate(-50%, -50%);
     margin-top: 150px;
   }
-  
