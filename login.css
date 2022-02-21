@@ -19,8 +19,8 @@ h1 {
 }
 
 footer {
-  background-color: #E8E6D9;
-  color: white;
+  background-color: #74839b;
+  color: #a9b6c3;
   height: 150px;
   position: relative;
   margin-top: -100px;
@@ -30,9 +30,9 @@ footer {
 html,
 body {
   height: 100%;
-  background-image: url("history_photo.jpg");
+  background-image: url("NTCback.jpg");
   background-repeat: no-repeat;
-  background-size: 1707px 440px;
+  background-size: 1290px 400px;
 }
  /* Choose background for top navigation bar */
  .topnav {
