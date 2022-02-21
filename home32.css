@@ -21,7 +21,7 @@
   footer {
     background-color: #74839b;
     color: #a9b6c3;
-    height: 350px;
+    height: 150px;
     position: relative;
     margin-top: -150px;
     clear: both;
@@ -31,7 +31,7 @@
     height: 100%;
     background-image: url("NTCback.jpg");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 1290px 499px;
   }
    /* Choose background for top navigation bar */
    .topnav {
