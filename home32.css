@@ -30,9 +30,9 @@
   html,
   body {
     height: 100%;
-    background-image: url("history_photo.jpg");
+    background-image: url("NTCback.jpg");
     background-repeat: no-repeat;
-    background-size: 1707px 440px;
+    background-size: contain;
   }
    /* Choose background for top navigation bar */
    .topnav {
