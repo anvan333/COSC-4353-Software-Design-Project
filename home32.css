@@ -11,13 +11,16 @@
   
   #container {
     min-height: 91%;
+<<<<<<< HEAD
   }
+=======
+>>>>>>> 25217721aa5a3449dff51f0d668aad86128f16d8
   
   #main {
     overflow: auto;
     padding-bottom: 100px;
   }
-  
+
   footer {
     background-color: #74839b;
     color: #a9b6c3;
@@ -25,19 +28,20 @@
     position: fixed;
     width: 100%;
     z-index: 8;
-    margin-top:px;
+    margin-top: -150px;
     clear: both;
   }
-  
-  html, body {
+
+html, body {
     height: 100%;
     background-image: url("NTCback.jpg");
-    background-position: center;
     background-repeat: no-repeat;
-    background-size: 1290px 499px;
+    background-position: center;
+
+    background-size: 1290px 499px; 
     position: relative;
-    z-index: 15;
-  }
+    z-index: 10;
+}
   
    /* Choose background for top navigation bar */
    .topnav {
