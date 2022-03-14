@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+    <script src="server32.js"></script>  
     <link rel ="stylesheet" href="userregister.css">
 
     <title></title>
@@ -19,18 +20,18 @@
         </center>
             <div class="userinfo">
                 <label><b>Username</b></label>
-                <input type="text" placeholder="Create Username" name="username" required="required"/>
+                <input type="text" placeholder="Create Username" name="username" id="username" required="required"/>
                 <label><b>First Name</b></label>
-                <input type="text" placeholder="First Name" name="fname" required="required"/>
+                <input type="text" placeholder="First Name" name="fname" id = "fname" required="required"/>
                 <label><b>Last Name</b></label>
-                <input type="text" placeholder="Last Name" name="lname" required="required"/>
+                <input type="text" placeholder="Last Name" name="lname" id = "lname" required="required"/>
                 <label><b>Address</b></label>
-                <input type="text" placeholder="Personal Address" name="address" required="required"/>
+                <input type="text" placeholder="Personal Address" name="address" id = "address" required="required"/>
                 <label><b>Password</b></label>
-                <input type="password" placeholder="Create Password" name="password" required="required"/>
+                <input type="password" placeholder="Create Password" name="password" id = "password" required="required"/>
             </div>
                 <div class="button">
-                <a href="home32.html" class="btn">Create Account</a>
+                <input class="btn" type="submit" name = "" value = "Create Account" onclick = "validateSignUp()">
             </div>
         </div>
     <footer class="container-fluid text-center">

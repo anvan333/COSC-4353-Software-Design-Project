@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script> type = "text/javascript"</script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel ="stylesheet" href="user_profile.css">
       </head>
@@ -23,6 +24,10 @@
              
            
       <div id="container">
+        <script type = text/javascript>
+        var fname: "Bob";
+        var lname: "Builder";
+        </script>
           <center>
             <h1 style="color:rgb(94, 84, 66)" > Client Profile </h3>
             </center>
@@ -30,13 +35,18 @@
                 <form id="form" action="profile.html" method="get"> 
                     <div class="form-group">
             <label for="full_name_id" class="control-label">Full Name: </label>
-            <h5> Firstname Lastname </h5>
+            <h5> Bob Builder
+              <script>
+              fname + " " + lname;
+
+              </script>
+            </h5>
                 </div>
             
             <div class="form-group">
                         <!-- Street #1 -->
                         <label for="first_street" class="control-label">First Street Address:</label>
-                        <h5> 4920 Old University Dr. </h5>
+                        <h5> 1234 something place </h5>
                     </div>
             
                     <div class="form-group">
