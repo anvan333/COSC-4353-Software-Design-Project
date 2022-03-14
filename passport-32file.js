@@ -11,6 +11,8 @@ function initialize(passport, getUserbyUsername, getUserById){
                     if(!user) {
                         return done(null, false, { message: 'User does not exist' })
                     }
+                    else{
+                        continue;}
 
                     // Match Password
                     bcrypt.compare(inputPassword, user.password, (err, isMatch) => {
@@ -24,7 +26,9 @@ function initialize(passport, getUserbyUsername, getUserById){
                         }
                     });
                 })
-                .catch(err=> console.log(err));
+                .catch{(err=> console.log(err));
+                       console.log("Please try again");}
+                
         })
     )
     passport.serializeUser((user, done) => done(null, user._id))
