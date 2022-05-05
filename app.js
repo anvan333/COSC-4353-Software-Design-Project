@@ -19,7 +19,7 @@ app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/js', express.static(__dirname + 'public/css'))
 app.use('/imgs', express.static(__dirname + 'public/css'))
 
-const urilink = ('mongodb+srv://cluster0.8msb7.mongodb.net/myGroup32db?appName=mongosh+1.3.1');
+const urilink = ('mongodb+srv://thienanvandb:r7CKoXqIem9fL1R8@cluster0.8msb7.mongodb.net/myGroup32db');
 mongoose.connect(urilink, {useNewUrlParser: true});
 
 const db = mongoose.connection;
