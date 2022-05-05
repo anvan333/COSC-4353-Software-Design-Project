@@ -25,4 +25,4 @@ const UserInfoSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('UserInfo', userInfoSchema);
+module.exports = mongoose.model('FuelQuote', fuelQuoteSchema);

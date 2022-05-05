@@ -3,7 +3,7 @@ use('myGroup32db')
 
 // Create a new collection.
 // db.ntcusers(collectionUsers);
-
-db.ntcusers.insertOne({'username': 'An Test'})
+db.users.drop()
+db.users.insertMany([{username: "An V", "complete": true}, {password: "abcd1234", "complete": true}, {new_users: "yes", "complete": true}])
 
 // db.ntcusers.find({'username':'An'})
