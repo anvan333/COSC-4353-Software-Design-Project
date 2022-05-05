@@ -4,8 +4,9 @@
   "description": "software design project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nyc mocha || true",
     "start": "nodemon app.js"
+    
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "method-override": "^3.0.0",
     "mongodb": "^4.5.0",
     "mongoose": "^6.2.9",
+    "nodemon": "^2.0.16",
     "nyc": "^15.1.0",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0"
