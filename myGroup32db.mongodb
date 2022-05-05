@@ -1,0 +1,9 @@
+// Create a new database.
+use('myGroup32db')
+
+// Create a new collection.
+// db.ntcusers(collectionUsers);
+
+db.ntcusers.insertOne({'username': 'An Test'})
+
+// db.ntcusers.find({'username':'An'})
