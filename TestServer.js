@@ -1,7 +1,7 @@
 const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
-const UserInfo = require('./userInfo')
+const UserInfo = require('./models/userInfo')
 
 function initialize(passport, getUserbyUsername, getUserById){
     passport.use(

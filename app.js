@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const port = 3000
+//const port = 3000
 const bcrypt = require('bcrypt')
 const passport = require('passport')
 const flash = require('express-flash')
@@ -11,6 +11,14 @@ const session = require('express-session')
 const methodOverride = require('method-override')
 const path = require("path")
 
+
+const loginRouter = require('./routes/login');
+const home32Router = require('./routes/home32');
+const user_profileRouter = require('./routes/user_profile');
+const profile_editRouter = require('./routes/profile_edit');
+const fuel_historyRouter = require('./routes/fuel_history');
+const fuel_quoteRouter = require('./routes/fuel_quote');
+const userregisterRouter = require('./routes/userregister');
 
 
 //static files
@@ -20,26 +28,37 @@ app.use('/js', express.static(__dirname + 'public/css'))
 app.use('/imgs', express.static(__dirname + 'public/css'))
 
 const urilink = ('mongodb+srv://thienanvandb:r7CKoXqIem9fL1R8@cluster0.8msb7.mongodb.net/myGroup32db');
-mongoose.connect(urilink, {useNewUrlParser: true});
+try{
+    mongoose.connect(urilink, {
+        useNewUrlParser: true, 
+        useUnifiedTopology: true
+        });
+    } catch (error) {
+    handleError(error);
+    }
+process.on('unhandledRejection', error => {
+console.log('unhandledRejection', error.message);
+});
+    
 
-const db = mongoose.connection;
-db.on('error', (error) => console.error(error))
-db.once('open', () => console.log('Connected to Database'))
+// const db = mongoose.connection;
+// db.on('error', (error) => console.error(error))
+// db.once('open', () => console.log('Connected to Database'))
 
 
 const userSchema = new mongoose.Schema({ 
-    full_name: { type: String, required: true }, 
-    street1: { type: String, required: true },
-    street2: String,
-    city: { type: String, required: true }, 
+    full_name_id: { type: String, required: true }, 
+    first_street: { type: String, required: true },
+    sec_street: String,
+    city_id: { type: String, required: true }, 
     zip: { type: Number, required: true },
-    state: { type: String, required: true },
+    state_id: { type: String, required: true },
     username: { type: String, required: true }
 });
 const userInfoSchema = new mongoose.Schema({
     username: { type: String, required: true },
     password: { type: String, required: true },
-    new_user: { type: Boolean, default: true},
+    new_user: { type: Boolean, default: true}
 });
 const fuelQuoteSchema = new mongoose.Schema({
     gallons: { type: Number, required: true },
@@ -53,7 +72,7 @@ const fuelQuoteSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 const FuelQuote = mongoose.model("FuelQuote", fuelQuoteSchema);
 
-const UserInfo = require('./userInfo')
+const UserInfo = require('./models/userInfo')
 const initializePassport = require('./TestServer') 
 const { join } = require('path')
 const { truncateSync } = require('fs')
@@ -335,7 +354,7 @@ function checknotAuthenticated(req, res, next){
 //app.listen(port, () => console.info('Listening on port ${port}'))
 
 
-//const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 module.exports = {
     checkAuth: function(){
         return checkAuthenticated;
@@ -356,5 +375,9 @@ module.exports = {
     fuel_quote: function() {
         return Fuel_quote;
     },
-    server: app.listen(port, () => console.info('Listening on port ${port}'))
 }
+    app.listen(PORT, () => {
+        console.log("Server running on port 3000");
+        //server: app.listen(PORT, () => console.info('Listening on port ${port}'))
+
+    });
