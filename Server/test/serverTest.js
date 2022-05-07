@@ -44,12 +44,12 @@ describe('Server',function(){
 
     it("It GET the updated client form to the profile", (done) => {
         const user = {
-            full_name: 'Darwin Morales', 
-            street1: '24 Black Mamba St', 
+            full_name: 'Bob Builder', 
+            street1: '5063 Spring Lake Rd', 
             street2: 'Ste 8',
             state: 'TX',
             city: 'Houston', 
-            zip: '77532'
+            zip: '77045'
         }
         chai.request(server)
             .get("/profile")
@@ -83,8 +83,8 @@ describe('Server',function(){
     describe("POST /login", () => {
         it("It should authenticate login", (done) => {
           const user = {
-            username: "Darwin",
-            password: "Morales",
+            username: "Bob",
+            password: "Builder",
           };
           chai
             .request(server)
@@ -166,12 +166,12 @@ describe('Server',function(){
     describe("POST /editProfile", () => {
         it("It POST the user credentials to the server", (done) => {
             const user = {
-                full_name: 'Darwin Morales', 
-                street1: '24 Black Mamba St', 
+                full_name: 'Bob Builder', 
+                street1: '5063 Spring Lake Rd', 
                 street2: 'Ste 8',
                 state: 'TX',
                 city: 'Houston', 
-                zip: '77532'
+                zip: '77045'
             }
             chai.request(server)
                 .post("/editProfile")
@@ -393,8 +393,8 @@ describe("GET /logout", () => {
     })
 
     //check Name
-    it('checkName should return Darwin Morales', function(){
-        assert.notEqual(checkNameResult, 'Morales');
+    it('checkName should return Bob Builder', function(){
+        assert.notEqual(checkNameResult, 'Builder');
     })
 
     it('checkName should return type string', function(){
@@ -402,8 +402,8 @@ describe("GET /logout", () => {
     })
 
      //check Address
-     it('checkStreet1 should return 24 Black Mamba Hwy', function(){
-        assert.notEqual(checkStreet1Result, 'Mamba');
+     it('checkStreet1 should return 5063 Spring Lake Rd', function(){
+        assert.notEqual(checkStreet1Result, 'Spring');
     })
 
     it('checkStreet1 should return type string', function(){
@@ -432,8 +432,8 @@ describe("GET /logout", () => {
     })
 
      //check city
-     it('checkCity should return Katy', function(){
-        assert.notEqual(checkCityResult, 'Katy');
+     it('checkCity should return Houston', function(){
+        assert.notEqual(checkCityResult, 'Houston');
     })
 
     it('checkCity should return type string', function(){
@@ -441,8 +441,8 @@ describe("GET /logout", () => {
     })
 
      //check ZIP
-     it('checkZip should return 77532', function(){
-        assert.notEqual(checkZipResult, '77654');
+     it('checkZip should return 77045', function(){
+        assert.notEqual(checkZipResult, '77045');
     })
 
     it('checkZip should return type string', function(){
