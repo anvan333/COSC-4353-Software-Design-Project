@@ -1,17 +1,16 @@
 * {
   margin: 0;
-  padding: 0;
+  padding: 10;
 }
 
-h3 {
-  color: rgb(139, 39, 0);
-  font-family: montserrat;
+h1 {
+  color: rgb(94, 84, 66);
+  font-family: Georgia, sans-serif;
   font-size: 50px;
-  margin-left: 1%;
 }
 
 #container {
-  min-height: 83%;
+  min-height: 35%;
 }
 
 #main {
@@ -20,31 +19,30 @@ h3 {
 }
 
 footer {
-  background-color: #555;
-  color: white;
+  background-color: hsl(216, 16%, 53%);
+  color: #a9b6c3;
   height: 150px;
   position: relative;
-  margin-top: -100px;
+  margin-top: 0x;
   clear: both;
 }
 
-html,
-body {
+html, body {
   height: 100%;
-  background-image: url("fuel.jpg");
+  background-image: url("bckground.jpeg");
   background-repeat: no-repeat;
-  background-size: 2000px 1900px;
+  background-size: contain;
 }
 
 .topnav {
-  background-color: rgb(52, 56, 59);
+  background-color: #E8E6D9;
   overflow: hidden;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
-  color: #f2f2f2;
+  color: #b5babe;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -53,12 +51,21 @@ body {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: hsl(216, 16%, 53%);
+  color: #2F3A56;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #4caf50;
+  background-color: #758093;
   color: white;
 }
+.btn {
+  border: 1px solid rgb(219, 201, 201);
+    background-color: #74839b;
+    padding: 10px 30px;
+    text-align: center;
+    color: #c4bdac;
+  }
+
+  
