@@ -4,25 +4,27 @@
   <title> Edit Profile </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script> type = "text/javascript"</script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel ="stylesheet" href="/css/editProfile.css">
 </head>
 
 <body>   
     <div class="topnav">
-        <a href="/">Home</a>
-        <a class="active" href="/profile">Profile</a>
-        <a href="/fuel_quote">Fuel Quote Form</a>
-        <a href="/history">Quote History</a>
+        <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a class="active" href="/profile"><span class="glyphicon glyphicon-user"></span>Profile</a>
+        <a href="/fuel_quote"><i class="fa fa-fw fa-envelope"></i> Fuel Quote Form</a>
+        <a href="/history"><span class="glyphicon glyphicon-cloud"></span>Quote History</a>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
           </ul>
       </div>       
      
 <div id="container">
-    <center><h3 style="color:orangered" > Client Profile Management </h3></center>
+    <center><h3 style="color:rgb(94, 84, 66)" > Client Profile Management </h3></center>
     <form id="form" action="/editProfile" method="post"> 
         <div class="form-group">
 <label for="full_name_id" class="control-label">Full Name</label>
@@ -128,8 +130,8 @@
     </form>
 </div>
 <footer class="container-fluid text-center">
-    <img class="img-rounded" width="80" height="80" src="/css/doj.png"><p>DOJ Fuel Industry Inc.</p>
-  <p>All Rights Reserved (2021)</p>
+    <img class="img-rounded" width="80" height="80" src="/css/ntc.png"><p>NTC Fuel Solutions</p>
+    <p>All Rights Reserved (2022)</p>
 </footer>
 
 </body>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> User Profile </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script> type = "text/javascript"</script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel ="stylesheet" href="css/user_profile.css">
+      </head>
+      <body>
+          <div class="topnav">
+              <a href="/home"><i class="fa fa-fw fa-home"></i> Home</a>
+              <a class="active" href="/profile"><span class="glyphicon glyphicon-user"></span> Profile</a>
+              <a href="/fuelquote"><i class="fa fa-fw fa-envelope"></i> Fuel Quote Form</a>
+              <a href="/fuelhistory"><span class="glyphicon glyphicon-cloud"></span> Fuel Quote History</a>
+                <ul class="nav navbar-nav navbar-right">
+              <li><a href="/login"><span class="glyphicon glyphicon-log-out"></span> Logout </a></li>
+            </ul>
+            </div>
+             
+           
+      <div id="container">
+        <script type = text/javascript>
+        var fname: "Bob";
+        var lname: "Builder";
+        </script>
+          <center>
+            <h1 style="color:rgb(94, 84, 66)" > Client Profile </h3>
+            </center>
+            <div id = "info">
+                <form id="form" action="/profile_edit" method="get"> 
+                    <div class="form-group">
+            <label for="full_name_id" class="control-label">Full Name: </label>
+            <h5><%= full_name %>
+              <script>
+              fname + " " + lname;
+
+              </script>
+            </h5>
+                </div>
+             <!-- Street 1 -->
+             <label for="street1_id" class="control-label">First Street Address:</label>
+             <h5> <%= street1 %> </h5>
+         </div>
+ 
+         <div class="form-group">
+             <!-- Street 2 -->
+             <label for="street2_id" class="control-label">First Street Address:</label>
+             <h5> <%= street2 %></h5>
+         </div>
+     
+     <div class="form-group">
+             <!-- City-->
+             <label for="city_id" class="control-label">City</label>
+             <h5> <%= city %></h5>
+         </div>
+ 
+         <div class="form-group">
+           <label for="city_id" class="control-label">State</label>
+             <h5> <%= state %> </h5>
+         </div>
+ 
+         <div class="form-group">
+             <!-- Zip Code-->
+             <label for="city_id" class="control-label">Zip Code</label>
+             <h4>  <%= zip %> </h4>
+             <br/>
+     <div class="form-group" id="buttons">
+             <!-- Edit Button -->
+             
+             <button type="submit" class="btn btn-primary btn-lg"><a href="/profile_edit"> </a> Edit Profile </button>
+             <a href="/" class= "btn btn-primary btn-lg"> Back to Home </a>
+         </div>
+         </div>
+       </div>
+ 
+            </div>
+            <footer class="container-fluid text-center">
+                <img class="img-rounded" width="80" height="80" src="imgs/ntc.png"><p>NTC Fuel Solutions </p>
+              <p>All Rights Reserved (2022)</p>
+            </footer>
+            
+            </body>
+            </html>

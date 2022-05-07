@@ -12,11 +12,11 @@
 </head>
 <body>
     <div class="topnav">
-        <a href="/">Home</a>
-        <a href="/profile">Profile</a>
-        <a class="active" href="/fuel_quote">Fuel Quote Form</a>
-        <a href="/history">Quote History</a>
-        <ul class="nav navbar-nav navbar-right">
+        <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="/profile"><span class="glyphicon glyphicon-user"></span> Profile</a>
+        <a class="active" href="/fuelquote"><i class="fa fa-fw fa-envelope"></i> Fuel Quote Form</a>
+        <a href="/history"><span class="glyphicon glyphicon-cloud"></span> Fuel Quote History</a>
+          <ul class="nav navbar-nav navbar-right">
             <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
           </ul>
         <!--<div class="logout">
@@ -28,7 +28,7 @@
       </div>
        
 <div id="container">
-    <h3 style="color:rgb(139, 39, 0)" > Fuel Quote Form </h3>
+    <h3 style="color:rgb(94, 84, 66)" > Fuel Quote Form </h3>
  <form id="form" action="/fuel_quote" method="post"> 
     <!-- Gallons Requested (numeric, required) -->
 <label for="gallons_quantity" class="control-label">Gallons Requested</label>
@@ -75,8 +75,8 @@
         </div>
 
 <footer class="container-fluid text-center">
-    <img class="img-rounded" width="80" height="80" src="css/doj.png"><p>DOJ Fuel Industry Inc.</p>
-  <p>All Rights Reserved (2021)</p>
+    <img class="img-rounded" width="80" height="80" src="css/ntc.png"><p>NTC Fuel Solutions </p>
+  <p>All Rights Reserved (2022)</p>
 </footer>
 
 </body>
@@ -105,7 +105,7 @@
         return;
     }
 
-    let first_time = <%= location_f %>;
+    let first_time = "<%= location_f %>";
     let history_factor = 0.0;
     let current_price = 1.50;
     let location_factor = 0.04;
