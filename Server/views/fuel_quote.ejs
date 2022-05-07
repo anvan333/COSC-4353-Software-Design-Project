@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fuel Quote</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel ="stylesheet" href="css/fuel_quote.css">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/profile">Profile</a>
+        <a class="active" href="/fuel_quote">Fuel Quote Form</a>
+        <a href="/history">Quote History</a>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+          </ul>
+        <!--<div class="logout">
+           <form action = "/logout?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-large"><span class="glyphicon glyphicon-log-out"></span> Log Out</button>
+        </form>-->
+        </div>
+        
+      </div>
+       
+<div id="container">
+    <h3 style="color:rgb(139, 39, 0)" > Fuel Quote Form </h3>
+ <form id="form" action="/fuel_quote" method="post"> 
+    <!-- Gallons Requested (numeric, required) -->
+<label for="gallons_quantity" class="control-label">Gallons Requested</label>
+            <input type=number class="form-control" id="gallons_requested_id"
+                name="gallons_requested" min ="0" step=any placeholder="100.00" onkeyup="disableSubmit()" required=true "/>
+<br>
+
+<div class="form-group">
+            <!-- Delivery Address (non-editable, comes from client profile) -->
+            <label for="delivery_address_id" class="control-label">Delivery Address</label>
+            <input type="text" value = "<%= user.street1 + ' ' + user.street2 + ' ' + user.city + ' ' + user.state + ' ' + user.zip %>" 
+            class="form-control" name="delivery_address" style = "width:100%;" readonly/>
+            
+        </div>
+
+        <!-- Delivery Date (calendar, date picker) -->
+        <div class="form-group">
+            <label for="delivery_d" class="control-label">Delivery Date</label>
+            <input type="date" id="delivery_d" name="delivery_date" min= "<%= min_date %>" required=true />  
+        </div>
+    
+
+        <!-- Suggested Price per Gallon (numeric non-editable, price will be calculated by pricing module -->
+            <div class="form-group">
+                <label for="price_id" class="control-label">Suggested Price per Gallon</label>
+                <input type="text" class="form-control"
+                    id="price_id" name="price_per_gallon" readonly/>
+            </div>
+
+        <!-- Total Amount Due (numeric non-editable, calculated (gallons * price)) -->
+        <div class="form-group">
+            <label for="total_id" class="control-label">Amount Due</label>
+            <input type="text" class="form-control"
+                id="total_id" name="total_due" readonly/>
+        </div>
+    
+        <div class="form-group">
+            <!-- Get Quote Button -->
+            <button id ="getQuote" button type = "button" disabled = "disabled" class="btn btn-primary btn-lg" onClick="calculateTotal()">Get Quote</button>
+
+            <!-- Submit Button -->
+            <button id = "submitForm" button type = "submit" disabled = "disabled" class="btn btn-success btn-lg">Submit</button>
+        </div>
+        </div>
+
+<footer class="container-fluid text-center">
+    <img class="img-rounded" width="80" height="80" src="css/doj.png"><p>DOJ Fuel Industry Inc.</p>
+  <p>All Rights Reserved (2021)</p>
+</footer>
+
+</body>
+<script>
+    form.addEventListener('input', () => {
+        if(gallons_requested_id.value.length > 0 &&
+            delivery_d.value.length > 0) {
+               getQuote.removeAttribute('disabled');
+               submitForm.removeAttribute('disabled');
+           }
+        else{
+            getQuote.setAttribute('disabled', 'disabled');
+            submitForm.setAttribute('disabled', 'disabled');
+        }
+    })
+    function disableSubmit() {
+        submitForm.setAttribute('disabled', 'disabled');
+    }
+
+    //update pricing module
+    function calculateTotal() {
+    
+    if ($("#gallons_requested_id").val() < 0 )
+    {
+        $("#gallons_requested_id").val()
+        return;
+    }
+
+    let first_time = <%= location_f %>;
+    let history_factor = 0.0;
+    let current_price = 1.50;
+    let location_factor = 0.04;
+    let state = "<%=user.state%>";
+    //console.log(first_time);
+    if(!first_time){
+        history_factor = 0.01;
+    }
+    if(state === "TX") 
+    {
+        location_factor = 0.02;
+    }
+    let gallons_factor = 0.03;
+    if ($("#gallons_requested_id").val() > 1000.00)
+    {
+        gallons_factor = 0.02;
+    }
+    let profit_factor = 0.1;
+
+    // console.log(history_factor);
+    let margin = current_price * (location_factor - history_factor + gallons_factor + profit_factor);
+    let suggested = current_price + margin;
+    let total = suggested * $("#gallons_requested_id").val();
+    //console.log(total)
+
+    $("#price_id").val(suggested);
+    $("#total_id").val(total.toFixed(2));
+      //var x = parseFloat(document.getElementById('gallons_requested_id').value);
+      //var y = parseFloat(document.getElementById('price_id').value);
+      //document.getElementById('total_id').value = "$" + x*y;
+    submitForm.removeAttribute('disabled');
+    }
+</script>
+</html>
