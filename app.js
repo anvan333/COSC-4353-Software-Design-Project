@@ -1,5 +1,5 @@
 if(process.env.NODE_ENV !== 'production'){
-    require('dotenv').config()
+    require('dotenv').config()  
 }
 
 const mongoose = require('mongoose')
@@ -13,7 +13,7 @@ const session = require('express-session')
 const methodOverride = require('method-override')
 const path = require("path")
 
-const uri = "mongodb+srv://thienanvandb:r7CKoXqIem9fL1R8@cluster0.8msb7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const uri = "mongodb+srv://celidebazandb:Group2022@cluster0.8msb7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true})
 
 const db = mongoose.connection
@@ -38,22 +38,22 @@ const fuelQuoteSchema = new mongoose.Schema({
     gallons: { type: Number, required: true },
     delivery_address: { type: String, required: true},
     delivery_date: { type: Date, required: true },
-    toprice_gal: { type: Number, required: true },
-    total_am: { type: Number, required: true },
+    price_gal: { type: Number, required: true },
+    total: { type: Number, required: true },
     username: { type: String, required: true },
 });
 
 const User = mongoose.model("User", userSchema);
 const FuelQuote = mongoose.model("FuelQuote", fuelQuoteSchema);
 
-const UserInfo = require('./models/UserInfo')
+const UserInfo = require('./server/models/UserInfo')
 const initializePassport = require('./passport-config') 
 const { join } = require('path')
 const { truncateSync } = require('fs')
 
 initializePassport(
     passport, 
-    inputUsername => dbUsers.find(user => user.inputUsername === inputUsername),
+    inputUsername => celidebazandb.find(user => user.inputUsername === inputUsername),
     id => users.find(user => user.id === id)
 )
 
@@ -86,7 +86,7 @@ app.get('/', checkAuthenticated, async (req, res) => {
     if(req.user.new_user){
         const update = { new_user: false }
         await UserInfo.findOneAndUpdate(filter, update)
-        res.redirect('/editProfile')
+        res.redirect('/profile_edit')
     }
     else{
         await User.find(filter).then(async (info) => {
@@ -116,11 +116,11 @@ app.post('/login', checknotAuthenticated, passport.authenticate('local', {
 }))
 
 app.get('/register', checknotAuthenticated, (req, res) => {
-    res.render('register.ejs')
+    res.render('userregister.ejs')
 })
 
 app.get('/profile', checkAuthenticated, (req,res) => {
-    res.render('profile.ejs', {full_name: userInfo.full_name, 
+    res.render('user_profile.ejs', {full_name: userInfo.full_name, 
     street1: userInfo.street1, 
     street2: userInfo.street2,
     state: userInfo.state,
@@ -141,7 +141,7 @@ app.post('/register', checknotAuthenticated, async (req, res) => {
         if (users.length > 0){
             // console.log(users.length);
             //users.splice(0, users.length);
-            res.redirect('/register');
+            res.redirect('/userregister');
         } else{
             const userInfo = new UserInfo ({
                 username: req.body.inputUsername,
@@ -154,13 +154,13 @@ app.post('/register', checknotAuthenticated, async (req, res) => {
         }
     })
     } catch{
-      res.redirect('/register')
+      res.redirect('/userregister')
     }
 })
 
 
-app.get('/editProfile', checkAuthenticated, (req, res) => {
-    res.render('editProfile.ejs');
+app.get('/profile_edit', checkAuthenticated, (req, res) => {
+    res.render('profile_edit.ejs');
 })
 
 app.post('/editProfile', checkAuthenticated, async (req,res) => {
@@ -189,7 +189,7 @@ app.post('/editProfile', checkAuthenticated, async (req,res) => {
         };
     })
     //console.log(userInfo);
-    res.redirect('/profile');
+    res.redirect('/user_profile');
 })
 app.get('/logout', (req, res) => {
     req.logOut()
@@ -203,9 +203,9 @@ app.delete('/logout', (req, res) => {
 
 const hist = []
 // Gets fuel quote history
-app.get('/api/history', (req, res) => res.json(hist));
+app.get('/api/fuel_history', (req, res) => res.json(hist));
 
-app.get('/history', checkAuthenticated, async (req, res) => {
+app.get('/fuel_history', checkAuthenticated, async (req, res) => {
     const filter = { username: req.user.username }
     await FuelQuote.find(filter).then((quotes) =>{
         var i = 0;
@@ -222,7 +222,7 @@ app.get('/history', checkAuthenticated, async (req, res) => {
     })
 
 
-    res.render('history.ejs', {hist: hist});
+    res.render('fuel_history.ejs', {hist: hist});
     hist.splice(0, hist.length);
 })
 app.get('/fuel_quote', checkAuthenticated, (req, res) => {
@@ -281,7 +281,7 @@ app.post('/fuel_quote', checkAuthenticated, async (req,res) => {
         username: req.user.username
     })
     await fuelQuote.save();
-    res.redirect('/history');
+    res.redirect('/fuel_history');
 })
 
 
