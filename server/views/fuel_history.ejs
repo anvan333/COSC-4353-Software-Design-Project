@@ -51,40 +51,26 @@
     <div id="main">
     <table class="table mt-5 text-center" id="fuel_history">
         <thead>
+          <thead>
           <tr>
-            <th>Gallons Requested</th>
-            <th>Delivery Address</th>
-            <th>Delivery Date</th>
-            <th>Price per Gallon</th>
-            <th>Total Amount Due</th>
+            <th><center>Gallons Requested</center></th>
+            <th><center>Delivery Address</center></th>
+            <th><center>Delivery Date</center></th>
+            <th><center>Price per Gallon</center></th>
+            <th><center>Total Amount Due</center></th>
           </tr>
         </thead>
-        <!-- example values -->
-        <tr>
-            <td>111</td>
-            <td>3490 Little York Ln, Maiami, FL 98301</td>
-            <td>10/05/2021</td>
-            <td>2.74</td>
-            <td><b>231.78</b></td>
-        </tr>
-        <tr>
-            <td>394</td>
-            <td>5063 Spring Lake Rd, Houston, TX 77045</td>
-            <td>02/18/2022</td>
-            <td>2.45</td>
-            <td><b>317.25</b></td>
-        </tr>
-        <tr>
-            <td>186</td>
-            <td>8896 Blue Earl Pl, Sunnyvalle, CA 43981</td>
-            <td>05/22/2021</td>
-            <td>2.01</td>
-            <td><b>673.41</b></td>
-        </tr>
+        <!-- Dummy Values just for front end -->
+        <% for(let i = 0; i < hist.length; i++) {%>
+            <tr> 
+                <td><%= hist[i].gallons %></td>
+                <td><%= hist[i].d_address %></td>
+                <td><%= hist[i].d_date%></td>
+                <td><%= hist[i].price_per%></td>
+                <td><%= hist[i].total%></td>
+            </tr>
+            <% } %>
         
-        <!-- Dynamic Table implemented in Javascript -->
-        <tbody id="dynamic-table-fuel">
-        </tbody>
       </table>
     </div>
     </div>

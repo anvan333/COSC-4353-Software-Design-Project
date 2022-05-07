@@ -72,71 +72,10 @@
 
 
 
-    <footer class="container-fluid text-center">
-        <img class="img-rounded" width="80" height="80" src="imgs/ntc.png"><p>NTC Fuel Solutions </p>
-      <p>All Rights Reserved (2022)</p>
-    </footer>
+        <footer class="container-fluid text-center">
+            <img class="img-rounded" width="80" height="80" src="imgs/ntc.png"><p>NTC Fuel Solutions </p>
+          <p>All Rights Reserved (2022)</p>
+        </footer>
         
-    
-    </body>
-    <script>
-        form.addEventListener('input', () => {
-            if(gallons_requested_id.value.length > 0 &&
-                delivery_d.value.length > 0) {
-                   getQuote.removeAttribute('disabled');
-                   submitForm.removeAttribute('disabled');
-               }
-            else{
-                getQuote.setAttribute('disabled', 'disabled');
-                submitForm.setAttribute('disabled', 'disabled');
-            }
-        })
-        function disableSubmit() {
-            submitForm.setAttribute('disabled', 'disabled');
-        }
-    
-        //update pricing module
-        function calculateTotal() {
-        
-        if ($("#gallons_requested_id").val() < 0 )
-        {
-            $("#gallons_requested_id").val()
-            return;
-        }
-    
-        let first_time = <%= location_f %>;
-        let history_factor = 0.0;
-        let current_price = 1.50;
-        let location_factor = 0.02;
-        let state = "<%=user.state%>";
-        //console.log(first_time);
-        if(!first_time){
-            history_factor = 0.01;
-        }
-        if(state === "TX") 
-        {
-            location_factor = 0.02;
-        }
-        let gallons_factor = 0.03;
-        if ($("#gallons_requested_id").val() > 1500.00)
-        {
-            gallons_factor = 0.02;
-        }
-        let profit_factor = 0.1;
-    
-        // console.log(history_factor);
-        let margin = current_price * (location_factor - history_factor + gallons_factor + profit_factor);
-        let suggested = current_price + margin;
-        let total = suggested * $("#gallons_requested_id").val();
-        //console.log(total)
-    
-        $("#price_id").val(suggested);
-        $("#total_id").val(total.toFixed(2));
-          //var x = parseFloat(document.getElementById('gallons_requested_id').value);
-          //var y = parseFloat(document.getElementById('price_id').value);
-          //document.getElementById('total_id').value = "$" + x*y;
-        submitForm.removeAttribute('disabled');
-        }
-    </script>
-    </html>
-    
+        </body>
+        </html>

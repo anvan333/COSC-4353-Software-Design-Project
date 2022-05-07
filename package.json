@@ -6,7 +6,6 @@
   "scripts": {
     "test": "nyc mocha || true",
     "start": "nodemon app.js"
-    
   },
   "repository": {
     "type": "git",
@@ -28,10 +27,17 @@
     "express-session": "^1.17.2",
     "method-override": "^3.0.0",
     "mongodb": "^4.5.0",
-    "mongoose": "^6.2.9",
-    "nodemon": "^2.0.16",
+    "mongoose": "^6.3.2",
     "nyc": "^15.1.0",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "dotenv": "^8.6.0",
+    "mocha": "^8.4.0",
+    "nodemon": "^2.0.16",
+    "standard": "^16.0.4"
   }
 }

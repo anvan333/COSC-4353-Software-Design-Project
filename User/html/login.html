@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Fuel Prediction Project</title>
-        <link rel="stylesheet" type="text/css" href="/css/login.css">
-    </head>
-    
-    <center><br><br>
-    
-    <img class="img-responsive" width="450" height="450" src="/css/ntc.png"></center>
-<br><br><br>
-<center>
-    <h1 style="color:rgb(94, 84, 66)" > NTC Fuel Solutions <br></h1>
-    <h2>Get your Fuel Quote Now!</h2>
-<br>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <script src = "server32.js"></script>   
+    <link rel ="stylesheet" href="css/login.css">
+
+    <title></title>
+  </head>
+  <body>
+
+    <br>
     <div class="container">
 <button onclick="document.getElementById('id01').style.display='block'" style="width:150px; height: 50px" >Get Started</button>
 
@@ -20,9 +21,9 @@
   
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    
     </div>
-
-     <form class="modal-content animate" id ="form" action="/login" method="POST" >
+     <form class="modal-content animate" id ="form" action="home.html" method="get" >
     <div class="form-group">
       <label><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="username" class="form-control" id="username"
@@ -38,19 +39,21 @@
       <button type="submit" class="btn btn-primary">Login</button>
    
       </div>
-      <br>
-      <% if (messages.error) { %>
-        <%= messages.error %>
-      <% } %>
-      <br>
-    <div class="container" style="color:rgb(94, 84, 66)">
+
+    <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">New user? <a href="/userregister">Click here</a></span>
+      <span class="psw">New user? <a href="register.html">Click here</a></span>
       
     </div>
 </form>
 </div>
     </div>
+
+    <footer class="container-fluid text-center">
+      <img class="img-rounded" width="80" height="80" src="imgs/ntc.png"><p>NTC Fuel Solutions </p>
+    <p>All Rights Reserved (2022)</p>
+  </footer>
+
 
 </center>
 <script>
@@ -65,5 +68,6 @@ window.onclick = function(event) {
 }
 </script>
 
-</body>
+
+  </body>
 </html>
