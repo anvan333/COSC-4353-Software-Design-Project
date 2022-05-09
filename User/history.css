@@ -21,9 +21,9 @@ h1 {
 footer {
   background-color: #74839b;
   color: #a9b6c3;
-  height: 150px;
-  position: fixed;
-  margin-top: -100px;
+  height: 140px;
+  position: relative;
+  margin-top: -130px;
   clear: both;
 }
 
@@ -31,14 +31,16 @@ html, body {
   height: 100%;
   background-image: url("NTCback.jpg");
   background-repeat: no-repeat;
-  background-size: 1290px 499px; 
+  background-size: 1200px 500px;
+  background-position: center;
   position: relative;
-  z-index: 10;
+  background-position: center right;
 }
 
-.topnav {
-  background-color: #E8E6D9;
+ /* Choose background for top navigation bar */
+ .topnav {
   overflow: hidden;
+  background-color: #E8E6D9;
 }
 
 /* Style the links inside the navigation bar */
@@ -62,6 +64,7 @@ html, body {
   background-color: #758093;
   color: white;
 }
+
 .button {
   position: absolute;
   top: 20%;
@@ -72,3 +75,10 @@ html, body {
   margin-top: 150px;
 }
 
+.btn {
+  border: 1px solid rgb(219, 201, 201);
+  background-color: #74839b;
+  padding: 10px 30px;
+  text-align: center;
+  color: #c4bdac;
+}
